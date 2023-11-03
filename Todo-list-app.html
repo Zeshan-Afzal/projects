@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo list App</title>
+</head>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(145, 143, 143);
+    }
+
+    .to-do-tasks1 {
+        display: grid;
+        grid-template-columns: 0.4fr 3fr 1.5fr 1fr;
+        gap: 7px;
+    }
+    .to-do-tasks2 {
+
+        column-gap: 0px;
+        display: grid;
+        grid-template-columns: 2.9fr 0.2fr 1fr;
+        margin-bottom: 10px;
+    }
+
+    .to-do-tasks1 div {
+        display: flex;
+        align-items: center;
+
+
+        height: 40px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+    .to-do-tasks1 div input {
+        height: 20px;
+        width: 100%;
+    }
+
+    .to-do-tasks1 div p {
+        font-size: 17px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .done {
+        background-color: rgb(199, 192, 192);
+        text-decoration: line-through;
+    }
+
+    .contianer {
+        width: 500px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+
+        margin-top: 40px;
+        height: 500px;
+        border: 2px solid gray;
+        border-radius: 12px;
+        padding-top: 30px;
+        background-color: rgb(227, 223, 223);
+      
+
+    }
+    h1{
+    text-align: center;
+    }
+
+    .to-do-tasks1 button {
+        width: 100%;
+        height: 36px;
+        background-color: rgb(130, 19, 19);
+        color: white;
+        border: none;
+        border-radius: 6px;
+        margin-left: 0px;
+        cursor: pointer;
+
+    }
+
+    .to-do-tasks1 button:hover {
+        background-color: rgb(163, 30, 30);
+    }
+
+
+    #date {
+        border-left: none;
+        width: 82%;
+        height: 32px;
+        cursor: pointer;
+    }
+
+    #input-box {
+        width: 100%;
+        height: 30px;
+        border-top-left-radius:4px;
+        border-bottom-left-radius: 4px;
+    }
+
+
+    .to-do-tasks2 button {
+        margin-left: 4px;
+        width: 100%;
+        height: 36px;
+        background-color: rgb(30, 149, 30);
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+
+    }
+
+    .to-do-tasks2 button:hover {
+        background-color: rgb(34, 179, 34);
+    }
+</style>
+
+<body>
+
+    <div class="contianer">
+        <h1>ToDo</h1>
+
+        <div class="to-do-tasks2">
+
+            <input type="text" name="" id="input-box" placeholder="Add your todo">
+            <input type="date" name="" id="date">
+            <button onclick="AddToList()">Add</button>
+        </div>
+        <div class="to-do-tasks to-do-tasks1">
+
+
+        </div>
+
+    </div>
+</body>
+
+<script>
+
+    let inputVal;
+    let dateValue;
+    localStorage.getItem('data')
+
+
+    function AddToList() {
+        let input = document.getElementById('input-box');
+        let date = document.getElementById('date');
+
+        dateValue = date.value
+        inputVal = input.value;
+
+        input.value = '';
+
+        addToToDo()
+
+    }
+
+    function addToToDo() {
+
+
+        let newelmnt = document.createElement('div')
+        let newelmnt2 = document.createElement('div')
+        let ToDodate = document.createElement('div')
+        let checkBox = document.createElement('div')
+        let inputchk = document.createElement('input')
+        let p = document.createElement('p')
+        let datep = document.createElement('p')
+        let button = document.createElement('button')
+
+        inputchk.setAttribute('type', 'checkbox')
+        checkBox.appendChild(inputchk)
+
+        button.innerHTML = 'delet'
+        p.innerHTML += inputVal;
+
+
+        datep.innerHTML = dateValue;
+        ToDodate.appendChild(datep)
+
+        newelmnt.appendChild(p)
+        newelmnt2.appendChild(button)
+
+        addd = document.querySelector('.to-do-tasks')
+        addd.appendChild(checkBox)
+        addd.appendChild(newelmnt)
+
+        addd.appendChild(ToDodate)
+        addd.appendChild(newelmnt2)
+
+        localStorage.setItem('data', 'addd')
+
+        button.addEventListener('click', function () {
+            newelmnt.remove()
+            newelmnt2.remove()
+            ToDodate.remove()
+            checkBox.remove()
+
+        })
+        checkBox.addEventListener('click', function () {
+
+
+            newelmnt.classList.toggle('done')
+            ToDodate.classList.toggle('done')
+
+
+        })
+
+
+    }
+
+</script>
+
+</html>
