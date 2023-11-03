@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <style>
+        /* Styles for the navbar container */
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        /* Navbar links */
+        .navbar a {
+            float: left;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /* Add a black background color to the navbar links on hover */
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Style the navigation menu for mobile screens */
+        .navbar .menu-icon {
+            display: none;
+        }
+
+        /* Toggle the navigation menu when the menu icon is clicked */
+        @media screen and (max-width: 768px) {
+            .navbar a:not(:first-child) {
+                display: none;
+            }
+            .navbar a.menu-icon {
+                float: right;
+                display: block;
+            }
+            .navbar.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+        }
+
+        /* Add a responsive style to the navigation menu */
+        @media screen and (max-width: 768px) {
+            .navbar.responsive {
+                position: relative;
+            }
+            .navbar.responsive .menu-icon {
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+            .navbar.responsive a.menu-icon {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar" id="myNavbar">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+    <a href="javascript:void(0);" class="menu-icon" onclick="toggleMenu()">&#9776;</a>
+</div>
+<div>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias nulla fugiat commodi, quasi architecto nobis cum culpa, necessitatibus ratione dolor itaque temporibus dicta, quis esse velit repudiandae quisquam iure tempore est expedita quia debitis quae odio? Libero vitae, quos laboriosam deleniti fuga dolorum soluta reiciendis inventore suscipit hic dicta repudiandae eos cupiditate praesentium, veritatis ipsum assumenda, maxime tempore totam. Repellat dolor possimus dolores provident optio illo, recusandae quas porro quae quidem aperiam expedita repellendus cum eaque, vitae animi quia, dolore magni omnis! Illo quisquam in totam necessitatibus quasi magni pariatur sint alias officia iusto nam autem commodi itaque expedita a, quo at error fugit ut ipsam tempore! Qui omnis dignissimos tempora placeat quisquam harum, cupiditate dolorem enim libero quasi, sint et magni, ratione eius non ipsum! Id natus quis dolorum optio corporis, nemo eveniet quidem harum laudantium quam, magnam, minima consequatur sint nobis molestiae nulla dolor voluptate at sunt ea. Harum quibusdam enim dignissimos vel eligendi, non qui, quasi maxime illo quae, facilis aliquam amet fugiat ipsam maiores sit at ex aspernatur fugit reiciendis impedit! Vitae aliquam animi ut tempora cupiditate officia minus recusandae, facilis quod accusamus officiis illo magni autem itaque ad? Dolore iure ducimus soluta suscipit, reprehenderit tempora ipsum odio maiores similique, eaque amet voluptatem laudantium, quo aspernatur facilis consequatur nisi corporis reiciendis repudiandae asperiores nostrum. Saepe quaerat dolores quisquam tempore consequatur, veniam ea maiores perspiciatis odio illo ratione unde vero iusto. Debitis quae, deleniti laudantium, natus soluta tempora iure officia atque ipsa ea error ducimus voluptas. Quam dolor iusto laboriosam atque aliquam rem possimus modi provident pariatur tempora, doloremque consequuntur delectus fugiat nemo facere quasi distinctio a quaerat. Quibusdam atque consequuntur ipsam accusamus, harum mollitia rem totam reprehenderit dolore ea impedit, possimus commodi? Alias molestiae necessitatibus, unde, optio praesentium temporibus iusto laboriosam doloribus rem suscipit, inventore tempore ullam vitae saepe quaerat voluptate explicabo possimus. Mollitia doloremque iure quibusdam quae corrupti tempore delectus dolorum, doloribus consequuntur illo facere perspiciatis libero expedita quas ipsum! Maiores ex aspernatur fugiat dolores, rerum modi ratione dignissimos praesentium culpa sequi omnis veritatis! Rem nihil temporibus, necessitatibus alias aliquid iure nostrum nesciunt porro sint earum nemo impedit doloribus maiores odio fugit quam expedita facere eligendi repudiandae natus rerum nisi molestias fuga. Ea, repellendus porro nesciunt cupiditate doloribus fugiat minus natus libero odit. Eum tempora at accusantium tempore cumque numquam itaque atque quos quod dolorum quasi reprehenderit, id totam nisi sapiente tenetur ea suscipit officiis dolore. Odit dolorem aut vitae natus provident rem molestias delectus aspernatur fuga. Nihil suscipit ex, accusantium molestiae quod numquam explicabo laborum dicta blanditiis architecto esse tempora officiis pariatur, laboriosam consectetur provident maiores quas assumenda! Ea aliquam odit blanditiis architecto laborum alias ipsa consequuntur fugit magni, corrupti est autem recusandae, deleniti sequi culpa perspiciatis incidunt nisi non adipisci. Nobis, veritatis dolore? Delectus aliquam doloribus, beatae dolorem odio tempora nobis officiis. Deserunt, iusto vel. Officiis esse suscipit, cum quam nesciunt accusantium vel eaque natus repudiandae corporis a tempore fugiat neque quisquam animi perferendis dolores nemo vitae, veniam magnam at nobis dolor sunt?
+</div>
+
+<script>
+    // Function to toggle the responsive menu
+    function toggleMenu() {
+        const navbar = document.getElementById("myNavbar");
+        if (navbar.className === "navbar") {
+            navbar.className += " responsive";
+        } else {
+            navbar.className = "navbar";
+        }
+    }
+</script>
+
+</body>
+</html>

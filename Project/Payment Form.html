@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+         <title>Payment Form</title>
+         <link rel="stylesheet" href="payment.css"> 
+
+   
+</head>
+<body>
+
+
+    <header class="header">
+        <div class="sign">
+            <img src="logo1.png" alt="logo">
+            <select name="language" id="laguage">
+                <option class="option" value="">Language</option>
+
+                <option class="option" value="English">English</option>
+                <option class="option" value="Urdu">Urdu</option>
+                <option class="option" value="Hindi">Hindi</option>
+                <option class="option" value="Spanish">Spanish</option>
+            </select>
+
+            <a href="Sign Upp.html">Sign in & <br> Accounts</a>
+            <a href="Payment Form.html">Payment Method</a>
+            <div onclick="toggle()" class="burger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+
+
+
+        </div>
+
+        <div id="nav" class="navbar nav-h">
+
+            <ul>
+
+                <li class="ul-v"> <a href="index.html">Home</a> </li>
+                <li class="ul-v"> <a href="#products">Products</a> </li>
+                <li class="ul-v"> <a href="#">More Services</a> </li>
+                <li class="ul-v"> <a href="#">About us</a> </li>
+                <li class="ul-v"> <a href="#contact">Contact us</a> </li>
+            </ul>
+        </div>
+
+
+    </header>
+
+
+
+
+
+    <div class="container">
+
+         <h1>
+            Payment Method
+         </h1>
+         <hr>
+         <h2>
+            User Information
+         </h2>
+         <form action="#">
+
+             <label for="name">Name:</label>
+             <input type="text" name="name" id="name" placeholder="Enter your name" required="" autofocus="">
+         <label for="email">Email:</label>
+         <input type="email" name="email" id="email" placeholder="Enter your email">
+         <fieldset>
+
+             <legend>Gender</legend>
+             Male<input type="radio" name="gender" id="male" >
+             Female <input type="radio" name="gender">
+         </fieldset>
+         <br>
+            <label for="phone">Phone No:</label>
+
+         <input type="phone" name="phone" id="phone" placeholder="Enter your phone No">
+         <label for="adress">Adress:</label><br>
+
+         <textarea name="adress" id="adress" cols="50" rows="5"></textarea>
+         <br>
+         <h2>Payment Information</h2>
+         <label for="CNIC">CNIC</label>
+
+         <input type="number" name="CNIC" id="CNIC" placeholder="11111-2222222-4">
+         <label for="Card-No">Debit Card NO:</label>
+         <input type="number" name="Card-No" id="Card-No" placeholder="111-222-3333-55">
+
+         <label for="expiredate">Expiration Date:</label>
+         <input type="date" name="expirydate" id="expiredate">
+         <label for="cardtype">Select your Card:</label>
+         <select name="cardtype" id="cardtype">
+             <option value="">Select Card Type</option>
+             <option value="visa">Visa</option>
+             <option value="NBP">NBP</option>
+             <option value="UBL">UBL</option>
+             <option value="HBL">HBL</option>
+            </select><br>
+            <label for="Cvv">CVV No:</label>
+            <input type="password" name="Cvv" id="Cvv" placeholder="123">
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" placeholder="Enter yor password" maxlength="20">
+            
+            <input type="Submit" value="Pay Now">
+            
+        </form>
+        </div>
+        
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Grasp everything on one click with | ----- E-Store</title>
+
+
+    <link rel="stylesheet" media="screen and (max-width:1205px)" href="media.css">
+
+    <link rel="stylesheet" href="sign up.css">
+
+<style>
+    p{
+        margin-left: 108px;
+        color: red;
+    }
+    p a{
+        text-decoration: none;
+        font-size: 14px;
+        
+        color: black;
+        cursor: pointer;
+    }
+</style>
+</head>
+
+<body style="background-color: rgb(217, 209, 209);">
+
+    <header class="header">
+        <div class="sign">
+            <img src="logo1.png" alt="logo">
+            <select name="language" id="laguage">
+                <option class="option" value="">Language</option>
+
+                <option class="option" value="English">English</option>
+                <option class="option" value="Urdu">Urdu</option>
+                <option class="option" value="Hindi">Hindi</option>
+                <option class="option" value="Spanish">Spanish</option>
+            </select>
+
+            <a href="Sign Upp.html">Sign in & <br> Accounts</a>
+            <a href="Payment Form.html">Payment Method</a>
+            <div onclick="toggle()" class="burger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+
+
+
+        </div>
+
+        <div id="nav" class="navbar nav-h">
+
+            <ul>
+
+                <li class="ul-v"> <a href="index.html">Home</a> </li>
+                <li class="ul-v"> <a href="#products">Products</a> </li>
+                <li class="ul-v"> <a href="#">More Services</a> </li>
+                <li class="ul-v"> <a href="#">About us</a> </li>
+                <li class="ul-v"> <a href="#contact">Contact us</a> </li>
+            </ul>
+        </div>
+
+
+    </header>
+
+    <!-- header completes here -->
+  
+    <div class="sign-up">
+
+           <h1>Sgin up</h1>
+           
+           &nbsp; &nbsp; &nbsp; <label for="name">Name</label>
+           <input type="text" name="name" id="name" placeholder="Enter your name">
+           <label for="second-name">Last Name</label>
+           <input type="text" name="last-name" id="second-name">
+           &nbsp; &nbsp; &nbsp;  <label for="email">Email</label>
+           <input type="email" name="email" id="eimal">
+           <label for="password">Password</label>
+           <input type="password" name="password" id="password">
+           <p id="chek1"></p>
+           <p><a id="a"  onclick="showhHide()">show password</a></p>
+           <label for="confirm-password">Confirm Password</label>
+
+           <input type="password" name="confirm-password" id="confirm-password">
+           <p id="chek2"></p>
+         
+
+      
+           <input type="submit" name="submit" value="Sign up" id="submit">
+          
+
+         
+
+    </div>
+  
+   
+
+ 
+
+
+    <script>
+     
+     let pas = document.getElementById('password');
+        let confPas = document.getElementById('confirm-password')
+
+        let show1 = document.getElementById('chek1');
+        let show2 = document.getElementById('chek2');
+
+        let info = {
+
+            firstName: '',
+            lastName: '',
+            email: '',
+            password: '',
+            confirmPassword: ''
+        }
+
+
+
+        pas.addEventListener('keyup', function () {
+            pasval = pas.value;
+
+            if (pasval.length > 0) {
+
+                if (isNaN(pasval)) {
+
+                    show1.innerHTML = 'password must be numbers only'
+                }
+                else if (pasval.length > 8 || pasval.length < 8) {
+
+                    show1.innerHTML = 'password must be 8 digits'
+                }
+
+                else {
+                    show1.innerHTML = ''
+                }
+
+
+            } else {
+                show1.innerHTML = ''
+            }
+
+
+
+
+        })
+
+
+        confPas.addEventListener('keyup', function () {
+            if (confPas.value.length > 0) {
+
+                if (confPas.value !== pas.value) {
+
+                    show2.innerHTML = "password doesn't match"
+                }
+                else {
+                    show2.innerHTML = ""
+                }
+
+            }
+            else {
+                show2.innerHTML = ""
+            }
+
+
+        })
+
+
+        function gett() {
+
+            info.firstName = document.getElementById('name').value;
+            info.lastName = document.getElementById('second-name').value;
+            info.email = document.getElementById('email').value;
+            info.password = document.getElementById('password').value;
+            info.confirmPassword = document.getElementById('confirm-password').value;
+
+
+
+        }
+
+    function showhHide(){
+
+
+        if(pas.getAttribute('type')==='password'){
+
+            
+            pas.setAttribute('type','text')
+            document.getElementById('a').innerHTML='hide password'
+        }
+        else{
+            pas.setAttribute('type','password')
+            document.getElementById('a').innerHTML='show password'
+        }
+
+        
+    }
+
+    </script>
+</body>
+
+</html>
+
+
+
+
+       
+
+
+
+
+    

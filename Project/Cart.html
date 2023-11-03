@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Grasp everything on one click with | -----Shopping-Bey E-Store</title>
+
+    <link rel="stylesheet" href="style.css/style.css">
+    <link rel="stylesheet" media="screen and (max-width:1205px)" href="media.css">
+    <link rel="stylesheet" href="cart.css">
+
+
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="sign">
+            <img src="logo1.png" alt="logo">
+            <select name="language" id="laguage">
+                <option class="option" value="">Language</option>
+
+                <option class="option" value="English">English</option>
+                <option class="option" value="Urdu">Urdu</option>
+                <option class="option" value="Hindi">Hindi</option>
+                <option class="option" value="Spanish">Spanish</option>
+            </select>
+
+            <a href="Sign Upp.html">Sign in & <br> Accounts</a>
+            <a href="Payment Form.html">Payment Method</a>
+            <div onclick="toggle()" class="burger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+
+
+
+        </div>
+
+        <div id="nav" class="navbar nav-h">
+
+            <ul>
+
+                <li class="ul-v"> <a href="index.html">Home</a> </li>
+                <li class="ul-v"> <a href="#products">Products</a> </li>
+                <li class="ul-v"> <a href="#">More Services</a> </li>
+                <li class="ul-v"> <a href="#">About us</a> </li>
+                <li class="ul-v"> <a href="#contact">Contact us</a> </li>
+            </ul>
+        </div>
+
+
+    </header>
+
+    <!-- header completes here -->
+    <!-- Home starts here -->
+
+    <div class="maincontainer">
+
+        <div class="leftside">
+
+            <div class="cart-img">
+                <img src="product1.png" alt="">
+
+            </div>
+
+        </div>
+        <div class="rightside">
+
+            <h2>Best Shirt of the year get it now</h2>
+            <div class="pricing-avail">
+                <p class="price">Rs. <span id="item-price">750</span> </p>
+                <div class="avail">
+                    <p class="stock" id="availability">availability </p>
+                    <p class="availbl">In Stock</p>
+                </div>
+
+
+            </div>
+            <div class="off-price">
+
+                <p class="before-price">Rs. 1199</p>
+                <p class="off">( 34% OFF)</p>
+            </div>
+            <div class="color-qunt">
+
+                <select name="" id="select">
+
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <p>color</p>
+            </div>
+            <div class="color">
+
+                <div class="chose">
+                    <img src="product1.png" alt="">
+                </div>
+                <div class="chose">
+                    <img src="product2.png" alt="">
+                </div>
+                <div class="chose">
+                    <img src="product3.png" alt="">
+                </div>
+
+            </div>
+
+            <p class="added">Added</p>
+            <div class="butttons">
+
+                <button id="add-to-cart" class="cart-btn">Add to Cart</button>
+
+
+            </div>
+
+
+        </div>
+
+        <div class="most-right-side">
+
+            <div class="cart-title">
+                <img src="logo1.png" alt="">
+                <span>Order Summary</span>
+            </div>
+
+
+
+            <div class="cart-details">
+
+                <div class="item-quant">
+                    <p> Items:</p>
+                    <p id="quantity">()</p>
+
+
+
+                </div>
+
+                <span>Rs.<span id="priceOfItem">00.00</span></span>
+
+            </div>
+            <div class="shipping">
+                <p>Shipping and handling</p>
+                <span>Rs. <span id="Tax">150</span> </span>
+
+
+            </div>
+            <div class="shipping tax">
+                <p>Total before tax</p>
+                <span>Rs.<span id="totalBeforeTax">00.00</span></span>
+
+
+            </div>
+            <div class="shipping tax">
+
+                <div class=" item-quant taxx">
+
+                    <p>Estimated tax</p>
+                    <p>(10%)</p>
+                </div>
+
+                <span>Rs.<span id="tax-total">00.00</span></span>
+
+
+            </div>
+            <br><br>
+            <hr>
+
+            <div class="order-placement">
+
+                <div class="shipping tottal">
+                    <p>Order Total:</p>
+                    <span>Rs. <span id="order-total">00.00</span></span>
+
+                </div>
+
+            </div>
+
+            <div class="button">
+             
+
+                <button class="cart-btn" onclick="pay()">Place Order</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="more-items">
+
+
+
+
+    </div>
+
+
+    <section class="footer1">
+
+        <h1>About us</h1>
+        <div class="container1">
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, dicta!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, dicta!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, dicta!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, dicta!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, dicta!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, dicta!
+            </p>
+        </div>
+    </section>
+    <footer>
+
+        <div class="footer">
+
+            <h4> <a href="#">ALL RIGHTS RESERVED BY NO ONE &COPY;</a></h4>
+            <h4> <a href="#">FAQ</a> </h4>
+            <h4> <a href="#">PRIVACY POLICY</a> </h4>
+            <h4> <a href="#">FOLLOW US</a> </h4>
+        </div>
+
+    </footer>
+
+
+    <script>
+
+        // Getting Elements from DOM
+let quantityOfItems = document.getElementById('quantity');
+let select = document.getElementById('select');
+let priceOfItem = document.getElementById('priceOfItem');
+let itemPric = document.getElementById('item-price');
+let Tax = document.getElementById('Tax');
+let totalBeforeTax = document.getElementById('totalBeforeTax');
+let taxTotal = document.getElementById('tax-total');
+let orderTotal = document.getElementById('order-total');
+let availbl = document.querySelector('.availbl');
+
+// Adding Event Listener
+document.getElementById('add-to-cart').addEventListener('click', () => {
+    document.querySelector('.most-right-side').style.display = 'flex';
+    document.querySelector('.added').style.display = 'block';
+    quantityVal();
+});
+
+// Creating functions
+function quantityVal() {
+    let quan = [];
+    quan.push(select.value);
+    quantityOfItems.innerHTML = quan;
+    totalQun = quantityOfItems.innerHTML;
+    calculatePrice();
+}
+
+function calculatePrice() {
+    let itemPrice = itemPric.innerHTML;
+    let quantityOfItemsNo = Number(totalQun);
+    priceOfItem.innerHTML = parseInt(itemPrice * quantityOfItemsNo);
+    beforShipPrice = priceOfItem.innerHTML;
+    shippingTax();
+}
+
+function shippingTax() {
+    let tax = Number(Tax.innerHTML);
+    let priceOfItemNo = Number(beforShipPrice);
+    totalBeforeTax.innerHTML = parseInt(tax + priceOfItemNo);
+    beforTaxInc = totalBeforeTax.innerHTML;
+    taxAdd();
+}
+
+function taxAdd() {
+    let totalBeforeTaxNo = Number(beforTaxInc);
+    taxTotal.innerHTML = totalBeforeTaxNo / 10;
+    taxOnItem = taxTotal.innerHTML;
+    taxTotalNo = Number(taxOnItem);
+    orderTotal.innerHTML = totalBeforeTaxNo + taxTotalNo;
+    availItems();
+}
+
+function availItems() {
+    let availability = 4;
+    availability = availability - select.value;
+    if (availability < 1) {
+        availbl.innerHTML = 'Out of stock';
+    }
+}
+
+function pay() {
+    window.open("Payment Form.html", "width=500px", "height=500px");
+}
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        function togglehide() {
+
+            let load = document.getElementById('load');
+            let btn = document.getElementById('btm');
+
+            if (load.style.display != 'none') {
+
+                load.style.display = 'none';
+                btn.innerHTML = 'Load More';
+            }
+            else {
+                load.style.display = 'flex';
+                btn.innerHTML = 'Hide';
+            }
+
+
+        }
+
+
+
+
+
+
+        // menu script 
+
+        burger = document.querySelector('burger');
+        home = document.getElementsByClassName('home')[0];
+        pro = document.getElementsByClassName('pro')[0];
+        nav = document.getElementById('nav');
+        ul = document.querySelectorAll('li');
+        function toggle() {
+
+
+            if (nav.style.display == 'none') {
+                nav.style.display = 'flex'
+                nav.style.height = '250px'
+                nav.style.transition = 'height 5s ease'
+                home.style.top = '-250px'
+                home.style.zIndex = '-2'
+                pro.style.marginTop = '-248px'
+
+
+
+            }
+            else {
+
+                nav.style.display = "none"
+
+                nav.style.transition = 'all 0.5s ease'
+                home.style.top = '0px'
+                pro.style.marginTop = '0px'
+
+
+            }
+        }
+
+
+
+
+
+        //  cart = document.querySelector('.cart');
+
+
+
+
+
+        // function show(){
+
+
+        //     cart.style.visibility='visible';
+        //     cart.style.top='-7px'
+        // }
+
+
+
+
+        // function hide(){
+
+        //     cart.style.visibility='hidden'
+        //     cart.style.top='-50px'
+        // }
+
+
+
+        function pay() {
+
+            window.open('Payment Form.html')
+        }
+
+
+
+
+
+
+        // function toggle() {
+
+        //     nav.classList.toggle('nav-h')
+        //     ul.classList.toggle('ul-v')
+        // }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+   //   gettting Elements from DOM 
+
+        let quantityOfItems = document.getElementById('quantity')
+        let select = document.getElementById('select')
+
+        let priceOfItem = document.getElementById('priceOfItem')
+        let itemPric = document.getElementById('item-price')
+        let Tax = document.getElementById('Tax')
+        let totalBeforeTax = document.getElementById('totalBeforeTax')
+        let taxTotal = document.getElementById('tax-total')
+        let orderTotal = document.getElementById('order-total')
+
+        let availbl = document.querySelector('.availbl')
+
+
+        // Adding adding EventListener  
+
+        document.getElementById('add-to-cart').addEventListener('click', () => {
+
+
+            document.querySelector('.most-right-side').style.display = 'flex'
+            document.querySelector('.added').style.display = 'block'
+
+            quantityVal()
+            calculatePrice()
+            shippingTax()
+            taxAdd()
+
+            //  creating functions 
+
+            function quantityVal() {
+
+                let quan = [];
+                quan.push(select.value)
+                quantityOfItems.innerHTML = quan;
+                totalQun = quantityOfItems.innerHTML
+
+                calculatePrice(totalQun)
+            }
+
+
+            function calculatePrice(totalQun) {
+
+                let itemPrice = 0;
+                let quantityOfItemsNo = Number(totalQun)
+
+
+                itemPrice = itemPric.innerHTML;
+
+                priceOfItem.innerHTML = parseInt(itemPrice * quantityOfItemsNo)
+
+                beforShipPrice = priceOfItem.innerHTML;
+                shippingTax(beforShipPrice)
+            }
+
+
+            function shippingTax(beforShipPrice) {
+                tax = Number(Tax.innerHTML)
+                priceOfItemNo = Number(beforShipPrice)
+                totalBeforeTax.innerHTML = parseInt(tax + priceOfItemNo);
+                beforTaxInc = totalBeforeTax.innerHTML;
+
+                taxAdd(beforTaxInc)
+
+
+            }
+
+            function taxAdd(beforTaxInc) {
+                totalBeforeTaxNo = Number(beforTaxInc)
+                taxTotal.innerHTML = totalBeforeTaxNo / 10;
+                taxOnItem = taxTotal.innerHTML;
+                taxTotalNo = Number(taxOnItem);
+                orderTotal.innerHTML = totalBeforeTaxNo + taxTotalNo;
+                quantityVal()
+                calculatePrice()
+                shippingTax()
+
+            }
+        }
+        )
+
+
+
+        document.getElementById('add-to-cart').addEventListener('click', () => {
+            availItems()
+            function availItems() {
+
+
+
+                availability = 4;
+                availability = availability - select.value;
+                if (availability < 1) {
+                    availbl.innerHTML = 'out of stock'
+
+                }
+            }
+        }
+        )
+
+        function pay() {
+            window.open("Payment Form.html", "width=500px", "height=500px");
+        }
+
+
+      

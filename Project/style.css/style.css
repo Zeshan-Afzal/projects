@@ -1,0 +1,558 @@
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* header styling */
+
+.header {
+    position: sticky;
+    top: 0px;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.sign {
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    color: white;
+    background-color: rgb(28, 21, 51);
+    width: 100%;
+    height: 50px;
+
+}
+
+
+.sign img {
+    width: 35px;
+    height: 35px;
+    filter: invert(100%);
+    cursor: pointer;
+
+
+
+
+
+}
+
+.sign select {
+
+    border: none;
+
+    font-size: 18px;
+    cursor: pointer;
+    background-color: transparent;
+    top: 4px;
+    color: white;
+
+}
+
+.sign a {
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.sign a:hover {
+    text-decoration: underline;
+}
+
+.sign select option {
+    color: black;
+}
+
+.burger {
+    display: none;
+
+}
+
+.line {
+    height: 4px;
+    width: 24px;
+    margin: 3px;
+    background-color: white;
+}
+
+/* Navigation Bar Styling */
+.navbar {
+
+    background-color: rgb(50 38 80);
+    width: 100%;
+    height: 50px;
+    font-family: sans-serif;
+
+
+
+}
+
+.navbar ul {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar li a {
+
+    margin: 5px 9px;
+    padding: 8px 9px;
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+
+}
+
+.navbar li {
+    list-style: none;
+    margin: 15px 0px;
+}
+
+.navbar li a:hover {
+    border: 1px solid white;
+
+    color: white;
+    font-size: 17px;
+}
+
+/* Home Section styling */
+.home {
+
+    text-align: center;
+    background: url(../style.css/bg1\ copy.jpg) no-repeat center center/cover;
+    height: 728px;
+    /* position: relative;
+    top: -44px;
+    z-index: -1; */
+    animation-name: more;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    animation-timing-function: ease;
+
+
+}
+
+@keyframes more {
+    50% {
+        background: url(../bbg.jpg)no-repeat center center/cover;
+
+    }
+
+    75% {
+        background: url(../bg2.jpg)no-repeat center center/cover;
+    }
+
+
+
+
+    100% {
+        background: url(../bg2.jpg) no-repeat center center/cover;
+    }
+}
+
+
+.home h1 {
+    margin: -7px 12px;
+    padding-top: 104px;
+    font-size: 2.7rem;
+    font-family: sans-serif;
+}
+
+.home p {
+
+
+    font-size: 1.3rem;
+    line-height: 30px;
+    font-family: sans-serif;
+}
+
+.btnn {
+
+    margin: 23px 25px;
+    padding: 8px 32px;
+    border-radius: 10px;
+    font-family: sans-serif;
+    transition: background 0.3s ease;
+    cursor: pointer;
+    background-color: transparent;
+    color: black;
+}
+
+.home button {
+    cursor: pointer;
+}
+
+.home button:hover {
+
+    background-color: black;
+    color: white;
+}
+
+
+
+
+
+/* Products Stylign */
+.products {
+    /* max-width: 1200px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    margin: auto;
+    align-items: center;
+    font-family: sans-serif;
+    background-color: rgb(255, 253, 253); */
+
+
+    max-width: 1400px;
+
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: auto;
+    align-items: center;
+    font-family: sans-serif;
+    background-color: rgb(232 232 232);
+
+
+}
+
+.items img {
+
+    width: 120px;
+    height: 120px;
+    display: block;
+    margin: auto;
+}
+
+.items {
+    /* margin: 16px 16px;
+    padding: 11px 10px;
+    width: 18%;
+    border-radius: 4px;
+    border: 2px solid gray;
+
+    /* box-shadow: 2px 3px 14px 11px #a59696e1; */
+    cursor: pointer;
+    font-family: sans-serif;
+
+    background-color: white;
+    margin: 41px 16px;
+    padding-top: 80px;
+    width: 20%;
+    height: 350px;
+    /* border-radius: 4px; */
+    /* border: 2px solid gray; */
+    /* box-shadow: 2px 3px 14px 11px #a59696e1; */
+    cursor: pointer;
+    font-family: sans-serif;
+
+
+
+}
+
+.cart {
+    width: 100%;
+    height: 35px;
+    background-color: rgb(199, 82, 15);
+    /* background-color: gray; */
+    display: block;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    top: -50px;
+
+    text-decoration: none;
+    visibility: hidden;
+
+    transition: all 0.5s ease;
+    padding: 6px;
+    margin-top: 6px;
+    color: white;
+    font-size: 17px;
+
+}
+
+.products p {
+
+    margin: 34px 0px;
+}
+
+.products p,
+h4 {
+
+    text-align: center;
+
+}
+
+.products h4 {
+    margin: 20px 0px;
+    border-top: 1px solid black;
+
+
+}
+
+
+
+.items:hover a {
+
+    font-size: 18px;
+    visibility: visible;
+    top: -7px;
+
+
+}
+
+
+.pro {
+    text-align: center;
+    font-size: 2.7rem;
+    font-family: sans-serif;
+    margin-bottom: -1px;
+    padding: 21px 0px;
+    border-bottom: 1px solid black;
+    background-color: rgb(232 232 232);
+}
+
+.btn3 {
+
+    width: 114px;
+    margin: 45px auto;
+    height: 37px;
+    display: block;
+    padding: 10px 8px;
+
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    font-family: sans-serif;
+    transition: background 0.3s ease;
+    border-radius: 7px;
+    font-size: 17px;
+    border: 1px solid black;
+}
+
+
+.btn3:hover {
+    background-color: #a5969659;
+
+
+}
+
+/* load pro  */
+.loadpro {
+    max-width: 1400px;
+
+    display: none;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: auto;
+
+
+    align-items: center;
+    font-family: sans-serif;
+    transition: all 0.5s ease;
+    background-color: rgb(232 232 232);
+}
+
+.loadpro img {
+
+    width: 120px;
+    height: 120px;
+    display: block;
+    margin: auto;
+}
+
+.loaditems {
+    margin: 16px 16px;
+    padding-top: 80px;
+    width: 20%;
+    height: 350px;
+    /* border-radius: 4px; */
+
+    /* box-shadow: 2px 3px 14px 11px #a59696e1; */
+    cursor: pointer;
+    font-family: sans-serif;
+    background-color: white;
+
+
+}
+
+.loadpro p {
+    margin: 34px 0px;
+}
+
+.loadpro p,
+h4 {
+
+    text-align: center;
+
+}
+
+.loadpro h4 {
+    margin: 20px 0px;
+    border-top: 1px solid black;
+
+
+
+}
+
+
+
+.loaditems:hover a {
+    font-size: 18px;
+    visibility: visible;
+    top: -7px;
+
+
+
+
+}
+
+/* More Section Styling */
+
+
+
+/* About us section Styling */
+.container1 {
+    display: flex;
+    justify-content: space-between;
+    margin: 36px 42px;
+    padding: 31px 26px;
+
+
+
+}
+
+h1 {
+
+    margin: 0px 2px;
+    text-align: center;
+    font-size: 3.4rem;
+}
+
+
+/* Login Section Styling */
+.form input {
+
+    display: block;
+    margin: 26px auto;
+    width: 422px;
+    height: 36px;
+    border-radius: 6px;
+    padding-inline-start: 23px;
+    border: none;
+    font-size: 17px;
+    transition: background 0.3s ease;
+
+}
+
+.form label {
+
+    margin: 0px 75px;
+}
+
+.form {
+    width: 652px;
+
+    height: 474px;
+    display: block;
+    margin: auto;
+    border: 2px solid black;
+    padding: 34px 43px;
+    position: relative;
+    top: 54px;
+    border: 1px solid rgba(0, 0, 0, 0.493);
+    border-radius: 12px;
+    background-color: rgba(0, 0, 0, 0.342);
+
+}
+
+.form input[type="submit"]:hover {
+    background-color: orange;
+    color: black;
+
+
+}
+
+.btmm {
+
+    border: 2px solid gainsboro;
+    background-color: rgba(0, 0, 0, 0.644);
+    color: white;
+}
+
+.container {
+
+    background: url(../bg5.jpg) no-repeat center center/cover;
+    height: 599px;
+    width: 100%;
+
+}
+
+form a {
+    text-decoration: none;
+}
+
+/* footer styling  */
+
+
+.footer1 {
+
+    width: 100%;
+    height: 215px;
+    background-color: #676767c7;
+    cursor: pointer;
+}
+
+.footer {
+    height: 64px;
+    background-color: rgb(85 82 82 / 78%);
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+    position: relative;
+    bottom: 0px;
+    cursor: pointer;
+}
+
+.footer a {
+    text-decoration: none;
+    color: black;
+    transition: all 0.1s ease;
+    cursor: pointer;
+    position: relative;
+    margin: 12px 40px;
+
+
+
+}
+
+.footer a:hover {
+
+    left: 2px;
+}
+
+@mediascreen (max-width="800px") {
+    .products {}
+
+}

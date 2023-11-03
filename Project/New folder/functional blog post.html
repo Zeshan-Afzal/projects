@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>My Blog</h1>
+    </header>
+    <div class="container">
+        <h2>Welcome to My Blog</h2>
+        <p>Here, you can find interesting articles on various topics.</p>
+        
+        <!-- Blog Posts Container -->
+        <div id="blog-posts">
+            <!-- Blog posts will be added dynamically here using JavaScript -->
+        </div>
+
+        <!-- Add New Blog Post Form -->
+        <h3>Add a New Blog Post</h3>
+        <form id="blog-form">
+            <input type="text" id="post-title" placeholder="Title" required>
+            <textarea id="post-content" placeholder="Write your blog post here..." required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script >
+	// Sample blog post data
+const blogPosts = [
+    { title: "Sample Post 1", content: "This is the content of the first post." },
+    { title: "Sample Post 2", content: "This is the content of the second post." },
+];
+
+// Function to display blog posts
+function displayBlogPosts() {
+    const blogPostsContainer = document.getElementById("blog-posts");
+    blogPostsContainer.innerHTML = "";
+
+    blogPosts.forEach((post, index) => {
+        const postElement = document.createElement("div");
+        postElement.classList.add("post");
+        postElement.innerHTML = `
+            <h3>${post.title}</h3>
+            <p>${post.content}</p>
+        `;
+        blogPostsContainer.appendChild(postElement);
+    });
+}
+
+// Function to add a new blog post
+function addBlogPost(title, content) {
+    blogPosts.push({ title, content });
+    displayBlogPosts();
+}
+
+// Submit form handler
+const blogForm = document.getElementById("blog-form");
+blogForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const titleInput = document.getElementById("post-title");
+    const contentInput = document.getElementById("post-content");
+    const title = titleInput.value;
+    const content = contentInput.value;
+    addBlogPost(title, content);
+    titleInput.value = "";
+    contentInput.value = "";
+});
+
+// Initial display of blog posts
+displayBlogPosts();
+
+	</script>
+</body>
+</html>
