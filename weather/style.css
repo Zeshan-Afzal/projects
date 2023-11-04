@@ -1,0 +1,157 @@
+body{
+    margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   background-color: rgba(226, 225, 230, 0.884);
+   transition: background 15s ease,color 15s ease;
+   
+}
+.navbar{
+    
+    position:sticky;
+    display: flex;
+    align-items:center ;
+    justify-content: space-between;
+    width: 100%;
+    height: 60px;
+    box-shadow: 0px 0px 3px 0.7px gray;
+
+     transition: all 0.7s ease ;
+}
+    .logo{
+        margin-left: 12px;
+        cursor: pointer;
+    }
+    .navitems{
+        margin-right: 12px;
+    }
+.navitems ul{
+    display: flex;
+
+}
+.navitems ul li{
+    list-style: none;
+    margin: 0 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.navitems ul li:hover{
+    color: gray;
+    
+}
+.bgr{
+    width: 20px;
+    height: 2px;
+    background-color: black;
+    margin:6px;
+    
+    
+
+}
+.burg{
+    margin-right:12px ;
+    cursor: pointer;
+    display: none;
+}
+.searchbox{
+    width: 250px;
+    display: flex;
+    height: 30px;
+   
+}
+.searchbox img{
+    width: 15px;
+    height: 15px;
+}
+.searchbox input{
+    width: 85%;
+border: none;
+border-top-left-radius: 3px;
+border-bottom-left-radius: 3px;
+padding-inline-start: 5px;
+background-color: white;
+}
+.searchbox .icon{
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    background-color:orange;
+    cursor: pointer;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+
+}
+.home{
+    margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+ 
+  align-items: center;
+ 
+
+}
+.weather{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.time-day{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.activNav{
+    height: 220px;
+    flex-direction: column;
+   justify-content: center;
+
+}
+.activeI{
+   
+   flex-direction: column;
+   
+
+}
+.activeII{
+    display: block;
+}
+#city{
+    font-size: 30px;
+    font-weight: bolder;
+
+}
+#region{
+    font-size: 14px;
+    font-weight: lighter;
+    color: gray;
+}
+.temp p{
+
+    font-weight: bold;
+    
+}
+.searchbox{
+    margin-right: 12px;
+}
+
+/* responsiveness  */
+@media screen and (max-width: 668px) {
+    .navitemss .lii{
+        display: none;
+     
+
+        
+    } 
+    .logo{
+        margin: 0;
+    }
+    
+    .burg{
+        display: block;
+        margin: 0;
+    }
+}
