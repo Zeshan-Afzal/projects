@@ -79,7 +79,7 @@
     .login .inputs {
 
 
-        gap: 7px;
+        gap: 6px;
 
 
 
@@ -87,36 +87,16 @@
 
     .login .inputs input {
         width: 100%;
-        padding: 6px;
+        padding: 5px;
 
 
 
     }
 
-    .login .inputs .show {
-        font-size: 0.70rem;
-        bottom: 8px;
-    }
+    
 
 
-    .login .sigin {
-        width: 80%;
-
-    }
-
-    .login .btn-prime {
-        width: 30%;
-        margin: 13px auto;
-    }
-
-    .btn-prime {
-        padding: 6px;
-        font-size: 0.80rem;
-
-
-
-
-    }
+    
 
 
 
@@ -380,7 +360,7 @@
     .login .inputs {
 
 
-        gap: 5px;
+        gap: 4px;
 
 
 
@@ -388,7 +368,7 @@
 
     .login .inputs input {
 
-        padding: 5px;
+        padding: 3px;
 
 
 
@@ -419,6 +399,11 @@
 
 
     /* home section responsiveness  */
+    .home {
+
+        height: 250px;
+       
+    }
     .home .slidbtn img {
         width: 20px;
 
@@ -450,12 +435,12 @@
     .products .img {
 
 
-        height: 100px;
+        min-height: 95px;
 
     }
 
     .products .img img {
-        padding: 10px;
+        padding: 7px;
 
 
     }
@@ -473,7 +458,8 @@
     }
 
     .products .price-of-item {
-        font-size: 0.90rem;
+        font-size: 0.80rem;
+        min-height: 30px;
 
     }
 
@@ -578,6 +564,11 @@
 
 
     /* home section responsiveness  */
+    .home {
+
+        height: 180px;
+       
+    }
     .home .slidbtn img {
         width: 13px;
 
@@ -603,13 +594,14 @@
 
         gap: 1px;
         padding: 2px;
+        padding: 5px;
 
     }
 
     .products .img {
 
 
-        height: 100px;
+        min-height: 80px;
 
     }
 
@@ -621,7 +613,8 @@
 
 
     .products .price-of-item {
-        font-size: 0.75rem;
+        min-height: 25px;
+        font-size: 0.70rem;
 
     }
 
