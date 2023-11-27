@@ -87,7 +87,39 @@ function bindData(data) {
     time = h + " : " + m + ' : ' + s
     document.querySelector('.time').innerHTML = time
     if (h < 18 && h > 6) {
-        document.body.style.backgroundColor = 'rgba(14, 6, 61, 0.884)'
+        if (data.current.cloud < 20) {
+
+            let img = document.querySelector('#src')
+
+
+            img.src = '113.png'
+        }
+        else if (data.current.cloud > 80) {
+
+            let img = document.querySelector('#src')
+
+
+            img.src = '389.png'
+        }
+        else if (data.current.cloud > 50) {
+
+            let img = document.querySelector('#src')
+
+
+            img.src = '176.png'
+        }
+        else if (data.current.cloud > 20) {
+
+            let img = document.querySelector('#src')
+
+
+            img.src = '116.png'
+        }
+     
+
+    }
+    else {
+   document.body.style.backgroundColor = 'rgba(14, 6, 61, 0.884)'
         document.body.style.color = 'white'
 
         if (data.current.cloud < 20) {
@@ -119,36 +151,24 @@ function bindData(data) {
             img.src = '216.png'
         }
 
-    }
-    else {
-        if (data.current.cloud < 20) {
-
-            let img = document.querySelector('#src')
 
 
-            img.src = '113.png'
-        }
-        else if (data.current.cloud > 80) {
 
-            let img = document.querySelector('#src')
+        
 
 
-            img.src = '389.png'
-        }
-        else if (data.current.cloud > 50) {
-
-            let img = document.querySelector('#src')
 
 
-            img.src = '176.png'
-        }
-        else if (data.current.cloud > 20) {
-
-            let img = document.querySelector('#src')
 
 
-            img.src = '116.png'
-        }
+
+
+
+
+
+
+        
+        
 
     }
 
