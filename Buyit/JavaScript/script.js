@@ -178,7 +178,7 @@ document.querySelectorAll('.new-arival-js').forEach((item)=>{
 document.querySelectorAll('.add-to-cart-btn').forEach((btn) => (
     btn.addEventListener('click', (e) => {
         let proId = e.target.dataset.productId
-        productsHtmGenerate()
+      
         addToCart(proId)
         cartHtmlGenerating()
         cartTotalAmount()
@@ -197,15 +197,12 @@ document.querySelectorAll('.remove-pro').forEach((btn)=>{
       
         let proId = e.target.dataset.productId
       
-        productsHtmGenerate()
+      
         removeFromCart(proId)
          cartHtmlGenerating()
 
          cartTotalAmount()
         
-        //  cartHtmlGenerating()
-        // // saveCart()
-      
         saveCart()
 
     })
