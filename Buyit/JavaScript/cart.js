@@ -21,7 +21,7 @@ export function addToCart(proId) {
     })
     if (matchingItem) {
         matchingItem.quantity += 1
-        matchingItem = ''
+
     } else {
         cartt.push({
             id: proId,
