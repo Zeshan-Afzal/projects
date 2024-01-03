@@ -176,35 +176,23 @@ document.querySelectorAll('.new-arival-js').forEach((item)=>{
 
 
 document.querySelectorAll('.add-to-cart-btn').forEach((btn) => (
-    btn.addEventListener('click', (e) => {
-        let proId = e.target.dataset.productId
-      
-        addToCart(proId)
-        cartHtmlGenerating()
-        cartTotalAmount()
-      
-        saveCart()
-
-
-    })
-))
+   btn.addEventListener('click', (e) => {
+      let proId = e.target.dataset.productId;
+      addToCart(proId);
+      cartHtmlGenerating();
+      cartTotalAmount();
+      saveCart();
+   })
+));
 
 
 
 
-document.querySelectorAll('.remove-pro').forEach((btn)=>{
-    btn.addEventListener('click',(e)=>{
-      
-        let proId = e.target.dataset.productId
-      
-      
-        removeFromCart(proId)
-         cartHtmlGenerating()
-
-         cartTotalAmount()
-        
-        saveCart()
-
-    })
-  
-})
+document.querySelector('.cart-items').addEventListener('click', (e) => {
+   if (e.target.classList.contains('remove-pro')) {
+      let proId = e.target.dataset.productId;
+      removeFromCart(proId);
+      cartTotalAmount();
+	          cartHtmlGenerating()
+   }
+});
