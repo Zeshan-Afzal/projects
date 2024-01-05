@@ -1,0 +1,141 @@
+
+@media screen and (max-width:250px) {
+    .navbar .logo img {
+        width: 5rem;
+
+        margin-left: 0px;
+    }
+
+    .navbar .navitems li a {
+        font-size: .75rem;
+    }
+
+    .navbar .icons img {
+        width: 1rem;
+
+
+    }
+
+    .navbar .icons {
+
+        gap: 10px;
+
+
+    }
+
+    /* Login form reponsiveness  */
+    .navbar .login {
+
+        width: 170px;
+        height: 250px;
+
+
+    }
+
+
+    /* home section responsiveness  */
+    .home {
+
+        height: 180px;
+       
+    }
+    .home .slidbtn img {
+        width: 13px;
+
+    }
+
+    .slidbtn .left {
+        margin-left: 5px;
+    }
+
+    .slidbtn .right {
+        margin-right: 5px;
+    }
+
+    /* new arival section responsiveness  */
+    .tital {
+
+        font-size: 0.80rem;
+        margin: 13px 0;
+
+    }
+
+    .products {
+
+        gap: 1px;
+        padding: 2px;
+        padding: 5px;
+
+    }
+
+    .products .img {
+
+
+        min-height: 80px;
+
+    }
+
+    .products .img img {
+        padding: 3px;
+
+
+    }
+
+
+    .products .price-of-item {
+        min-height: 25px;
+        font-size: 0.70rem;
+
+    }
+
+
+
+    .products .add-to-cart-btn {
+        width: 100%;
+       
+        font-size: 0.70rem;
+        margin-top: 1px;
+
+    }
+
+
+    /* reason to buy section responsiveness  */
+    .services {
+
+        gap: 5px;
+
+        margin-bottom: 10px;
+    }
+
+    .btn2 {
+
+        width: 60px;
+
+        font-size: 0.60rem;
+        padding: 4px;
+
+    }
+
+
+    .reason-to-buy .text {
+
+
+        gap: 7px;
+
+
+    }
+
+    .reason-to-buy .text p {
+        font-size: 0.70rem;
+
+
+
+    }
+
+    /* footer responsiveness  */
+    .footer {
+        grid-template-columns: 1fr;
+
+    }
+
+}
