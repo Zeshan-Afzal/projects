@@ -1,0 +1,232 @@
+
+/* media for 500 width screeen  */
+
+@media screen and (max-width:500px) {
+    .navbar .logo img {
+        width: 5rem;
+
+        margin-left: 8px;
+    }
+
+    .navbar .navitems li a {
+        font-size: .75rem;
+    }
+
+    .navbar .icons img {
+        width: 1rem;
+
+
+    }
+
+    .navbar .icons {
+
+        gap: 15px;
+
+
+    }
+    .navbar .cart{
+        width: 250px;
+    }
+
+    /* Login form reponsiveness  */
+    .navbar .login {
+
+        width: 350px;
+        height: 260px;
+
+
+    }
+
+    .login h1 {
+        margin-top: 15px;
+
+    }
+
+    .login .inputs {
+
+
+        gap: 4px;
+
+
+
+    }
+
+    .login .inputs input {
+
+        padding: 3px;
+
+
+
+    }
+
+    .login .inputs .show {
+        font-size: 0.70rem;
+        bottom: 6px;
+    }
+
+
+
+
+    .login .btn-prime {
+
+        margin: 10px auto;
+    }
+
+    .btn-prime {
+        padding: 5px;
+        font-size: 0.80rem;
+
+
+
+
+    }
+
+
+
+    /* home section responsiveness  */
+    .home {
+
+        height: 250px;
+       
+    }
+    .home .slidbtn img {
+        width: 20px;
+
+    }
+
+    .slidbtn .left {
+        margin-left: 15px;
+    }
+
+    .slidbtn .right {
+        margin-right: 15px;
+    }
+
+    /* new arival section responsiveness  */
+    .tital {
+
+        font-size: 1.1rem;
+        margin: 18px 0;
+
+    }
+
+    .products {
+        
+        height: 290px;
+        gap: 3px;
+        padding: 4px;
+
+    }
+
+    .products .img {
+
+
+        min-height: 95px;
+
+    }
+
+    .products .img img {
+        padding: 7px;
+
+
+    }
+
+    .products .ratings span {
+        font-size: 0.80rem;
+        color: gray;
+
+    }
+
+    .products .ratings span img {
+
+        height: 10px;
+
+    }
+
+    .products .price-of-item {
+        font-size: 0.80rem;
+        min-height: 30px;
+
+    }
+
+
+    .products .quantity-of-item select {
+        font-size: 0.80rem;
+
+        width: 30px;
+        height: 20px;
+
+    }
+
+    .products .add-to-cart-btn {
+        width: 100%;
+       
+        font-size: 0.75rem;
+        margin-top: 1px;
+
+    }
+
+    /* reason to buy section responsiveness  */
+    .services {
+
+        gap: 5px;
+        width: 100%;
+
+        margin-bottom: 20px;
+    }
+
+    .btn2 {
+
+        width: 70px;
+
+        font-size: 0.66rem;
+        padding: 4px;
+
+    }
+
+
+
+
+
+
+
+
+
+    .reason-to-buy .text {
+
+
+        gap: 10px;
+
+
+    }
+
+    .reason-to-buy .text p {
+        font-size: 0.75rem;
+
+
+
+    }
+    .first-half h2{
+        font-size: 23px;
+
+    }
+
+
+}
+@media  screen and (max-width:412px){
+    .new-arival {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+    .navbar .login {
+
+        width: 250px;
+        height: 260px;
+
+
+    }
+    
+}
