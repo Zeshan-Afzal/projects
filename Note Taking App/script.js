@@ -25,9 +25,8 @@ writeNoteButton.addEventListener('click', () => {
 
 // Event listener for the "Save" button
 saveButton.addEventListener('click', () => {
-    // Generate a random number for a unique ID
-    const random = Math.round(Math.random() * 1000) + 1;
-    const id = String(random);
+    // Generate a random  a unique ID
+    const id = generateUniqueID();
 
     // Add the new note to the array and save it to local storage
     notesArray.push({ 'id': id, 'text': textValueElement.value });
@@ -129,3 +128,23 @@ function saveChangesToNoteElement(noteElement, key) {
 function saveNoteToLocalStorage() {
     localStorage.setItem('notes', JSON.stringify(notesArray));
 }
+
+
+
+function generateUniqueID() {
+  const characters = '---abcdefghijklmn---opqrst--uvwxyz0123456789';
+  const idLength = 12;
+  let uniqueID = '';
+
+  for (let i = 0; i < idLength; i++) {
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    uniqueID += characters.charAt(randomIndex);
+  }
+
+  return uniqueID;
+}
+
+
+
+
+
