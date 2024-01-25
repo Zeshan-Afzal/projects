@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Metadata for character set and responsive viewport -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Page title -->
+    <title>ImageGal</title>
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Main container -->
+    <div class="container">
+      <!-- Header section -->
+      <div class="head">
+        <!-- Logo and Login section -->
+        <div class="header">
+          <!-- Logo -->
+          <div class="logo">
+            <h1>ImageGal</h1>
+          </div>
+          <!-- Login button -->
+          <div class="login">Login</div>
+        </div>
+
+        <!-- Search section -->
+        <div class="search">
+          <!-- Search input box and button -->
+          <div class="search-box">
+            <input
+              type="text"
+              class="inpVal"
+              name=""
+              id=""
+              placeholder="Search photos here"
+            />
+            <button class="search-btn">Search</button>
+          </div>
+
+          <!-- Tabs for Main, Gallery, and Favorite sections -->
+          <div class="tabs">
+            <li class="active main" id="main">Main</li>
+            <li class="gallery" id="gallery">Gallery</li>
+            <li class="favorit" id="favorit">Favorite</li>
+          </div>
+        </div>
+      </div>
+
+      <!-- Loading spinner section -->
+      <div id="loading-spinner" style="display: none">Loading...</div>
+
+      <!-- Main photo container with placeholder text -->
+      <div class="main-photo-container">
+        <h1 class="h1-for-photos">Search Photos</h1>
+      </div>
+    </div>
+
+    <!-- Script inclusion for JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
