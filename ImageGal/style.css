@@ -225,9 +225,11 @@ li.active {
 /* Styles for "Load More" button */
 .btn-dv {
   margin-top: 30px;
+margin-bottom: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
+	
 }
 
 .btn-dv .more-btn {
