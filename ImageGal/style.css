@@ -23,7 +23,7 @@ body {
 }
 
 .header {
-  height: 70px;
+  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -57,29 +57,40 @@ body {
 
 /* Styles for search section and tabs */
 .search .tabs {
+	border-bottom:4px solid red;
   background: black;
   height: 70px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-end;
-  margin-right: 20px;
-  width: 60%;
+ 
+  width: 100%;
 }
 
-/* Active tab styles */
-.active {
-  border-bottom: 3px solid white;
-}
+
 
 /* Tab styles */
 .tabs li {
+	border-top-left-radius:6px;
+	border-top-right-radius:6px;
+
+	text-align:center;
+	width:30%;
   color: red;
   font-size: 1.3rem;
   font-weight: 600;
   transition: all 0.5s ease ease-in;
   cursor: pointer;
+  border:3px solid transparent;
 }
-
+/* Active tab styles */
+li.active {
+	
+ 
+  background:red;
+  color:white;
+  
+}
 /* Search box styles */
 .search {
   display: flex;
@@ -90,7 +101,7 @@ body {
 
 /* Styles for search input box */
 .search-box {
-  height: 70px;
+  height: 90px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -175,6 +186,18 @@ body {
   margin: auto;
   border-radius: 3px;
 }
+.add-photos{
+	color:white;
+	margin-top:50px;
+}
+
+.description{
+	font-family: verdana;
+    font-weight: 500;
+    margin: 10px;
+    color: white;
+    font-size: 1.2rem;
+}
 
 /* Styles for favorite buttons */
 .fav-button {
@@ -208,6 +231,7 @@ body {
 }
 
 .btn-dv .more-btn {
+	display:none;
   background: red;
   padding: 10px;
   border: none;
@@ -237,6 +261,23 @@ body {
 }
 
 /* Media query for smaller screens */
+@media screen and (max-width: 900px) {
+  .search-box input {
+  width: 30%;
+    font-size: 1rem;
+    padding: 13px;
+
+  }
+
+  .search-box button {
+    width: 12%;
+    font-size: 1rem;
+    padding: 14px;
+}
+  
+}
+
+/* Media query for smaller screens */
 @media screen and (max-width: 556px) {
   .search-box input {
     width: 40%;
@@ -251,7 +292,7 @@ body {
   }
 
   .tabs li {
-    color: red;
+  
     font-size: 1rem;
   }
 
@@ -276,4 +317,84 @@ body {
   .photo-box {
     height: 410px;
   }
+  
+  .btn-dv .more-btn {
+
+  padding: 7px;
+  
+  width: 90px;
+ 
+}
+
+/* Styles for loading spinner */
+#loading-spinner {
+ 
+  padding: 7px;
+
+}
+}
+@media screen and (max-width: 340px) {
+ .search-box input {
+        width: 45%;
+    font-size: 0.80rem;
+    padding: 6px;
+}
+  
+
+  .search-box button {
+    width: 25%;
+    font-size: 0.80rem;
+    padding: 7px;
+
+  }
+
+  .tabs li {
+    color: red;
+    font-size: 0.80rem;
+  }
+
+  .header .login {
+    width: 46px;
+    padding: 4px;
+    font-size: 10px;
+}
+  
+
+  .logo h1 {
+    font-size: 18px;
+  }
+
+  .search .tabs {
+    height: 40px;
+  }
+
+  .search-box {
+    height: 40px;
+  }
+
+  .photo-box {
+    height: 350px;
+  }
+  .header {
+    height: 40px;
+  }
+  
+  
+/* Hover effect for "Load More" button */
+.btn-dv .more-btn {
+
+  padding: 7px;
+  
+  width: 80px;
+ 
+}
+
+/* Styles for loading spinner */
+#loading-spinner {
+ 
+  padding: 7px;
+
+}
+
+  
 }
