@@ -56,9 +56,9 @@ document
   .addEventListener("click", handleAddRemoveClicks);
 //function responsible for handling tabs and rendering photos on tab clicks
 function handleTabs(e) {
-  let tabId = e.target.id;
-  openTab(tabId);
-  let activeTabId=tabId;
+  let activeTabId = e.target.id;
+  openTab(activeTabId);
+
 
   if (activeTabId === "main") {
    searchAndRenderPhotos()
@@ -123,19 +123,24 @@ function openTab(tabId) {
 //function resposible for handling api
 async function getPhotosFromApi() {
   try {
+	  
 	  const baseUrl = `https://api.unsplash.com/search/photos?per_page=12&page=${page}&query=${query}&client_id=ds9Xs3l6PjIhSsb8NrDn9nTPYq1cvz90ZbOkqkS0RKs`;
+	  
     let response = await fetch(`${baseUrl}`);
     let data = await response.json();
-
+   if(!response.ok){
+	   throw ('something went wrong with your internet')
+   }
     let photosArr = data.results;
     return photosArr;
   } catch (error) {
-      return error;
+       console.log(error)
+	  
   }
 }
 //function responsible for  searching functionality and rendering photos based on each tabs
 async function searchAndRenderPhotos() {
-  showSpinner();
+	try{showSpinner();
   query = inputVal.value;
   let newPhotos = await getPhotosFromApi();
   let activeTabId = activeTab();
@@ -159,6 +164,14 @@ async function searchAndRenderPhotos() {
   }
  hideSpinner();
 
+		
+		
+	}
+	catch (error){
+		console.log('someting went wrong in searchAndRenderPhotos function')
+		
+	}
+  
 }
 
 //function responsible for renderning photos for gallery and favorite tab
@@ -247,18 +260,27 @@ async function handleAddRemoveClicks(e) {
 
     if (e.target.classList.contains("remove-from-gal")) {
       let id = e.target.dataset.id;
-
-      gallery = gallery.filter((item) => id !== item.id);
-renderPhotosInTab(gallery)
+    let confirme=confirmAction('Do you want to Remove')
+	if(confirme){
+		
+		gallery = gallery.filter((item) => id !== item.id);
+      renderPhotosInTab(gallery)
       saveToGallery();
+		
+		}
+      
 	  
     }
     if (e.target.classList.contains("unfav")) {
       let id = e.target.dataset.id;
-
-      favorites = favorites.filter((item) => id !== item.id);
+      let confirme=confirmAction('Do you want to Unfavorite')
+	  if(confirme){
+		  favorites = favorites.filter((item) => id !== item.id);
 renderPhotosInTab(favorites)
       saveToFavorite();
+		  
+	  }
+      
 	  
     }
 
@@ -297,9 +319,13 @@ function handleLogin(e) {
     e.target.style.background = "red";
     isLoggedIn = true;
   } else if (e.target.innerHTML === "Logout") {
-    e.target.style.background = "green";
+	   let confirme=confirmAction('Do you want to Logout')
+	   if(confirme){
+		     e.target.style.background = "green";
     e.target.innerHTML = "Login";
     isLoggedIn = false;
+	   }
+   
   }
 }
 //function resposible for showing Sppinner
@@ -309,4 +335,11 @@ function showSpinner() {
 //function resposible for hidding  Sppinner
 function hideSpinner() {
   document.getElementById("loading-spinner").style.display = "none";
+}
+
+// function for comfirmation 
+function confirmAction(message){
+	     
+		 return confirm(message)
+	
 }
