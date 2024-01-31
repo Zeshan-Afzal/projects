@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+   <style>
+    .b {
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .title {
+        text-align: center;
+        color: #333;
+    }
+
+    .input {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    label {
+        margin-bottom: 8px;
+        color: #555;
+    }
+
+    input[type="number"] {
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+
+    .btn {
+        padding: 8px;
+        width: 80px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .wish-message {
+        text-align: center;
+        font-size: 1.2rem;
+        color: red;
+        margin-bottom: 20px;
+    }
+
+    .main {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .age-container {
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    .div,
+    .div2,
+    .div3 {
+        margin-top: 10px;
+        font-size: 2rem;
+    }
+
+    .label {
+        color: #555;
+        font-size: 1rem;
+    }
+</style>
+
+</head>
+
+<body>
+
+   <div class="b">
+    <h1 class="title">Age Calculator</h1>
+    <div class="input">
+        <label for="date">Date: </label>
+        <input type="number" placeholder="14" id="date">
+        <label for="month">Month: </label>
+        <input type="number" placeholder="11" name="" id="month">
+        <label for="year">Year: </label>
+        <input type="number" placeholder="2004" name="" id="year">
+        <input type="button" value="Check" class="btn">
+    </div>
+    <div class="wish-message"> <!-- Adding a class for styling -->
+        <p class="wish-text"></p>
+    </div>
+    <div class="main">
+        <div class="age-container">
+            <div class="div"></div>
+            <p class="label">Years</p>
+        </div>
+        <div class="age-container">
+            <div class="div2"></div>
+            <p class="label">Months</p>
+        </div>
+        <div class="age-container">
+            <div class="div3"></div>
+            <p class="label">Days</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <script>
+
+
+// Getting DOM elements to show the age
+let ageContainer = document.querySelector('.div');
+let monthContainer = document.querySelector('.div2');
+let dayContainer = document.querySelector('.div3');
+let totalDaysContainer = document.querySelector('.wish-text');
+
+// Getting date of birth values from input fields
+let birthDateInput = document.querySelector('#date');
+let birthMonthInput = document.querySelector('#month');
+let birthYearInput = document.querySelector('#year');
+
+// Getting the current date using the Date object
+let currentDate = new Date();
+currentDate.setMonth(1);
+let currentYear = currentDate.getFullYear();
+let currentMonth = currentDate.getMonth();
+let currentDay = currentDate.getDate();
+
+// Adding an event listener to check the button for calculating age and showing results
+document.querySelector('.btn').addEventListener('click', () => {
+    // Getting date of birth info from input fields
+    let birthDay = birthYearInput.value;
+    let birthMonth = birthMonthInput.value;
+    let birthDate = birthDateInput.value;
+
+    // Getting calculated age of the user using the calculateAge function
+    let calculatedAge = calculateAge(birthDate, birthMonth, birthDay);
+
+    // Passing age values to displayAge function for showing on the page
+    displayAge(calculatedAge);
+});
+
+
+
+
+
+
+
+
+
+
+// Function for calculating user's age
+// function calculateAge(date, month, birthYear) {
+//     // Variables for storing the age values
+//     let days;
+//     let months;
+//     let years;
+
+//     // Adding conditions for different birth dates to get the accurate age
+//     if (currentMonth > month) {
+//         // First checking if the birth month is greater than the current month
+//         if (currentDay > date) {
+//             // Then checking if the current date is greater than the date of birth
+//             // If so, then calculating age accordingly
+//             days = Math.abs(currentDay - date);
+//             months = Math.abs(currentMonth - month);
+//             years = Math.abs(birthYear - currentYear);
+//         } else if (currentDay < date) {
+//             // Checking if the current date is less than the date of birth
+//             let dateValue = date - currentDay;
+//             let monthValue = month - currentMonth;
+//             days = Math.abs(dateValue - 30);
+//             months = Math.abs(monthValue - 12) - 1;
+//             years = Math.abs(birthYear - currentYear);
+//         } else if (currentDay == date) {
+//             // Checking if the current date is the same as the date of birth
+//             days = Math.abs(currentDay - date);
+//             months = Math.abs(currentMonth - month);
+//             years = Math.abs(birthYear - currentYear);
+//         }
+//     } else if (currentMonth == month) {
+//         // Checking if the current month is the same as the date of birth month
+//         if (currentDay > date) {
+//             days = Math.abs(currentDay - date);
+//             months = Math.abs(currentMonth - month);
+//             years = Math.abs(birthYear - currentYear);
+//         } else if (currentDay < date) {
+//             let dateValue = date - currentDay;
+//             let monthValue = month - currentMonth;
+//             days = Math.abs(dateValue - 30);
+//             months = Math.abs(monthValue - 12);
+//             years = Math.abs(birthYear - currentYear) - 1;
+//         } else if (currentDay == date) {
+//             // If the current date is the same as the date of birth, it's the user's birthday
+//             document.querySelector('.wish').innerHTML = 'HAPPY BIRTHDAY';
+//             days = Math.abs(currentDay - date);
+//             months = Math.abs(currentMonth - month);
+//             years = Math.abs(birthYear - currentYear);
+//         }
+//     } else if (currentMonth < month) {
+//         if (currentDay > date) {
+//             let monthValue = month - currentMonth;
+//             days = Math.abs(currentDay - date);
+//             months = Math.abs(monthValue - 12);
+//             years = Math.abs(birthYear - currentYear) - 1;
+//         } else if (currentDay == date) {
+//             let monthValue = month - currentMonth;
+//             days = Math.abs(currentDay - date);
+//             months = Math.abs(monthValue - 12);
+//             years = Math.abs(birthYear - currentYear) - 1;
+//         } else if (currentDay < date) {
+//             let dateValue = date - currentDay;
+//             let monthValue = month - currentMonth;
+//             days = Math.abs(dateValue - 30);
+//             months = Math.abs(monthValue - 12) - 1;
+//             years = Math.abs(birthYear - currentYear) - 1;
+//         }
+//     }
+
+//     // Returning the age in an array
+//     return [years, months, days];
+// }
+
+
+
+// Function for calculating user's age
+function calculateAge(date, month, birthYear) {
+    // Creating Date objects for the current date and the user's birthdate
+    const currentDate = new Date();
+    const birthDate = new Date(birthYear, month - 1, date);
+
+    // Calculating the difference in milliseconds between the current date and the birthdate
+    const ageDifferenceInMs = currentDate - birthDate;
+
+    // Calculating age in years, months, and days
+ let  years = currentDate.getFullYear() - birthDate.getFullYear();
+ let  months = currentDate.getMonth() - birthDate.getMonth();
+ let  days = currentDate.getDate() - birthDate.getDate();
+
+    // Adjusting for negative values in months and days
+    if (days < 0) {
+        months--;
+        days += 30; // Assuming a month is 30 days for simplicity
+    }
+
+    if (months < 0) {
+        years--;
+        months += 12;
+    }
+	
+    
+	let totalDays=Math.round(ageDifferenceInMs/86400000)
+	if(currentDate.getMonth()== birthDate.getMonth() && currentDate.getDate() == birthDate.getDate()){
+	
+	totalDays+=" HAPPY BIRTHDAY"}
+    // Returning the age in an array
+    return [years , months , days, "Total days " + totalDays ];
+}
+
+// Function responsible for showing the age on the page
+
+
+
+
+
+
+
+
+
+// Function responsible for showing the age on the page
+function displayAge(ageValues) {
+    ageContainer.innerHTML = ageValues[0];
+    monthContainer.innerHTML = ageValues[1];
+    dayContainer.innerHTML = ageValues[2];
+    totalDaysContainer.innerHTML = ageValues[3];
+}   
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
